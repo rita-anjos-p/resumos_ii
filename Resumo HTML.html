@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<title>Resumo HTML</title>
+	<meta charset="utf-8" />
+</head>
+
+<body>
+	<header>
+		<h1>Resumos HTML</h1>
+	</header>
+	
+	<h5>Índice</h5>
+	<nav>
+		<ul>
+			<li><a href="#o_que_e_html">O que é HTML?</a></li>
+			<li><a href="#elementos_html">Elementos HTML</a></li>
+			<li><a href="#estrutura_documento_html">Estrutura de um documento HTML</a></li>
+			<li><a href="#lista_elementos_html">Lista de Elementos HTML e seus atributos</a></li>
+			<li><a href="#organizacao_web">Organização de sítio web</a></li>
+		</ul>
+	</nav>
+	
+	<section>
+	<h2><a id="o_que_e_html">O que é HTML?</a></h2>
+		<p><strong>H</strong>yper<strong>T</strong>ext <strong>M</strong>arkup <strong>L</strong>anguage
+		<br>É a linguagem usada para escrever docs web.
+			<ul>
+				<li>Define o <strong>conteúdo</strong> de docs web.</li>
+				<li>Define a <strong>estrutura</strong> desse mesmo conteúdo</li>
+				<li>Define como se <strong>interligam</strong> docs web <em>hipertexto</em></li>
+			</ul>
+		<p>Um documento HTML é composto por <strong>elementos html</strong>. Estes são usados para estruturar o texto, tendo cada um um significado associado (ex: título, parágrafo, etc). E segue uma estrutura fixa.
+	</section>
+	<section>
+	<h2><a id="elementos_html">Elementos HTML</a></h2>
+	<!-- &lt; corresponde a maior que, &gt; corresponde a menor que. Inclui o ponto e vírgula -->
+		<p> Cada elemento é constituído por 3 partes:
+			<ul>
+				<li>a marca de início: <strong> &lt;<em>elemento</em>&gt; </strong> </li>
+				<li>o conteúdo: <strong> &lt;elementgtt; <em>conteúdo</em> </strong> </li>
+				<li>a marca de fim (igual à de ínicio mas precedida de uma barra: <strong>&lt;elemento&gt;conteúdo<em>&lt;/elemento&gt;</em></strong></li>
+			</ul>
+		<p>A maneira como o elementos é escrito (maiúsculas ou minúsculas) é indiferente visto que se trata apenas de um código que específica o que é o conteúdo. No entanto o conteúdo é sensível a essas alterações, visto que é o que acaba por ser mostrado ao leitor, tal e qual foi escrito.
+		<br>A marca de início de um elemento pode ter vários <em>atributos</em> associados. Há atributos obrigatórios e outros opcionais. Quando um elemento tem um atributo associado este não aparace na marca de fim, apenas na de início.
+		<br>Vários espaços em branco seguidos não são contabilizados e convertem-se em apenas um só espaço na página web.
+		<h3>Tipos de elementos</h3>
+			<p>Há dois tipos de elementos em HTML:
+			<ul>
+				<li><strong>Elementos não vazios:</strong> têm conteúdo
+					<ul><li>ex: &lt;h1&gt;título 1&lt;/1&gt;</li></ul>
+				</li></ul>
+				<ul><li><strong>Elementos vazios:</strong> não têm conteúdo <strong>nem marca de fim</strong>
+					<ul><li>ex: &lt;img src="fotografia"&gt;</li></ul>
+				</li></ul>
+			<p>LISTA DOS ELEMENTOS MAIS USADOS
+		<h3>Organização de elementos</h3>
+			<p> Os elementos devem ser organizados de maneira a que estejam encaixados, uns dentro dos outros, e não intercalados. Isto é: um elemento 2 que começe dentro de um elemento 1 previamente iniciado deve ser finalizado antes que o elemento 1 o seja.
+			<br> Entende-se então que: &lt;1&gt; &lt;2&gt; &lt;/2&gt; &lt;/1&gt; está correto. E que: &lt;1&gt; &lt;2&gt; &lt;/1&gt; &lt;/2&gt; já não irá funioncar, causando erros.
+	</section>
+	<section>
+	<h2><a id="estrutura_documento_html">Estrutura de um documento HTML</a></h2>
+		<h3>Verificação de erros</h3>
+		<p>Todos os documentos html devem seguir a mesma estrutura, normalizada pela W3C (World Wide Web Consortium). Esta organização foi criada para garantir a compatibilidade e entendimento entre empresas no desenvolvimento e adoção de tecnologias web. É através do seu serviço automático de avaliação da conformidade do código que se pode verificar erros cometidos ao longo dos documentos criados.
+		O link é: <a href="http://validator.w3.org/">http://validator.w3.org/</a>. É boa prática ir verificando o documento ao longo da criação do código visto que torna mais fácil a sua correção. 
+		<h3>Base de um documento HTML</h3>
+			<p>O documento HTML tem como base a seguinte estrutura:
+				<br>&nbsp; &nbsp;&lt;!DOCTYPE html&gt;
+					<br>&nbsp; &nbsp;&nbsp; &nbsp; &lt;html&gt;
+						<br>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&lt;head&gt;
+								<br>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&lt;title&gt;Título do Documento&lt;/title&gt;
+							<br>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&lt;/head&gt;
+							<br>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;body&gt;
+								<br>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&lt;p&gt;Corpo do Documento&lt;/p&gt;
+							<br>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;/body&gt;
+					<br>&nbsp; &nbsp;&nbsp; &nbsp;&lt;/html&gt;
+			<br>Ou seja, começa-se por identificar o tipo de documento, html é raiz do documento, defini-se o <em>head</em> (cabeçalho) com informações gerais, necessárias ao navegador para processar e apresentar o doc. Após fechar o <em>head</em>, abre-se o <em>body</em> onde ficaram todas as informações que devem constar na página propriamente dita. No final fecha-se o html.
+		<h3>Caracteres complexos</h3>
+			<p>A maioria dos caracteres que utilizamos são definidos por 6 bytes enquanto caracteres especiais como "ç" ou qualquer caracter acentuado já utiliza mais bytes. Para que o texto apareça corretamente quando for lido é necessário adicionar <strong>"&lt;meta charset=“utf-8” /&gt;"</strong> uma linha abaixo da definição do tipo de documento.
+		<h3>Definição da língua - optativo</h3>
+			<p>A definição da língua em que a página vai ser escrita é optativo, no entanto é aconselhado visto que faz parte dos <em>warnings</em> dados pelo W3C aquando da verificação do documento. Par isso basta adicionar a &lt;html&gt; o atributo: lang="<em>língua</em>". O elemento, na sua totalidade e supondo que a língua é o português, deve então ficar: &lt;html lang="pt"&gt;. No final do 
+			documento, ao fechar o elemento html não há necessidade de repetir o atributo (tal como acontece em todos os casos).
+	</section>
+	<section>
+	<h2><a id="lista_elementos_html">Lista de elementos HTML e seus atributos</a></h2>
+		<h3>Cabeçalho</h3>
+			<p><strong> head </strong> - define o que faz parte do cabeçalho.
+			<br>Obrigatoriamente, dentro de head tem que estar o:
+			<br><strong>title</strong> - é normalmente apresentado no topo da janela do navegador.
+			<br>Como optativos pode-se ter:
+			<br><strong>meta</strong> - permite especificar informações sobre o documento, ou
+			<br><strong>link</strong> - permite estabelecer ligações entre o documento e outros recursos, <em>nomeadamente folhas de estilo (CSS)</em>.
+		<h3>Corpo</h3>
+			<p>O corpo do documento é definido pelo elemento <strong>body</strong>. Todos os próximos elementos mecionados devem aparecer subordinados a este.</p>
+			<h4>Títulos</h4>
+				<p>Há 6 níveis de título em html. Estão denominados por ordem de importância, sendo o mais importante <strong>h1</strong>, e o menos importanto o <strong>h6</strong>.
+				<br><strong>h1</strong> - Título principal
+				<br><strong>h2</strong> - Título secundário
+				<br><strong>h6</strong> - Título de menor importancia
+				<br>Cada navegador web têm estilos pre-definidos, por omissão, para cada um destes elementos, que podem ser alterados através de folhas de estilo.
+			<h4>Parágrafos, Destaques e Quebras de linha </h4>
+				<p><strong>p</strong> - parágrafo. Delimita blocos de informação, textual ou não. Fehcar &lt;p&gt; é opcional (por ser subentendida com a abertura do próximo &lt;p&gt;)
+				<br><strong>strong</strong> - destaca o texto (tipo bold).
+				<br><strong>em</strong> - enfatisa o texto (tipo itálico).
+				<br><strong>br</strong> - quebra de linha. É um <em>elemento vazio</em>
+				</p>
+			<h4>Listas</h4>
+				<p>Há dois tipos de listas em html: <em>listas ordenadas</em>, que são numeradas, e <em> listas não ordenadas</em>, que apresentam apenas pontos para cada entrada.
+				<br><strong>ol</strong> - orderly list
+				<br><strong>ul</strong> - unorderly list
+				<br><strong>li</strong> - cada item dentro da lista deve ser apresentado dentro deste elemento, para que seja identificado.
+				<br><em>exemplo</em>: 
+				<br>&lt;ol&gt; 
+				<br>&nbsp; &nbsp; &lt;li&gt; item 1 &lt;/li&gt; 
+				<br>&lt;/ol&gt;
+	<!-- &nbsp, adiciona espaços em branco -->
+			<h4>Tabelas</h4>
+				<p><strong>table</strong> - delimita a tabela
+				<br><strong>tr</strong> - table row, especifica cada linha
+				<br><strong>td</strong> - table division, especifica cada célula dentro de cada linha
+				<br><strong>th</strong> - table header, define células tipo título (bold)
+				<br>Atributos de TD ou TH:
+				<br><strong>rowspan</strong> - agrupa células (número deve ser especificado) por linha
+				<br><strong>colspan</strong> - agrupa células (número deve ser especificado) por coluna
+				<br><em>exemplo</em>: 
+				<br>&lt;table&gt;
+				<br>&nbsp; &nbsp; &lt;tr&gt;
+				<br>&nbsp; &nbsp; &nbsp; &nbsp; &lt;th rowspan="2"&gt; Célula 1 &lt;/th&gt;
+				<br>&nbsp; &nbsp; &nbsp; &nbsp; &lt;td&gt; Célula 2 &lt;/td&gt;
+				<br>&nbsp; &nbsp; &lt;/tr&gt;
+				<br>&nbsp; &nbsp; &lt;tr&gt;
+				<br>&nbsp; &nbsp; &nbsp; &nbsp; &lt;td&gt; Célula 3 &lt;/td&gt;
+				<br>&nbsp; &nbsp; &lt;/tr&gt;
+				<br>&lt;/table&gt;
+				<br> cujo resultado seria:
+				<table>
+				<tr> <th rowspan="2">Célula 1</th> <td>Célula 2</td> </tr>
+				<tr> <td>Célula 3</td> </tr>
+				</table>
+			<h4>Imagens</h4>
+				<br><strong>img</strong> - imagem
+				<br>Atributo obrigatório:
+				<br><strong>src</strong> - source. Indica o local da imagem em relação ao documento. O caminho até aos ficheiros é feito utilizando a mesma lógica que os comandos linux.
+				<br>Atributos opcionais:
+				<br><strong>alt</strong> - texto alternativo. Não é obrigatório mas é boa prática visto que viabilizam a compreensão de imagens por pessoas com dificuldades de visão, facilita a indexação dos conteúdos por parte dos motores de pesquisa e em navegadores que não apresentem imagens passa a existir uma maior compatibilidade.
+				<br><strong>height</strong> - altura. 
+				<br><strong>width</strong> - largura. Usar a altura e a largura permite o navegador apresentar o resto do conteúdo deixando o espaço adequado para as imagens que demorem a carregar. Cada vez mais especificado através do CSS.
+			<h4>Ligações</h4>
+				<br><strong>a</strong> - anchor. permite establecer ligações do doc a outros recursos da web
+				<br><strong>href</strong> - hyper reference. permite indicar o destino da hiperligação. 
+				<br>Ligações podem ser <em>absolutas</em>, quando o destino é independente do local do documento html, ou <em>relativas</em>, para referenciar documentos do computador tendo como ponto de partida o próprio documento html.
+				<br><em>exemplos:</em>
+				<br>referência absoluta:
+				<br>&lt;a href="<em>website</em>"&gt; WEBSITE &lt;/a&gt;
+				<br>cujo resultado seria:
+				<br><a href="https://www.website.com/"> WEBSITE </a>
+				<br>referência relativa: a um documento adjacente a este
+				<br>&lt;a href="Doc_exemplo.pdf"&gt; Documento referência relativa &lt;/a&gt;  (neste caso só o nome do documento porque encontram-se na mesma pasta)
+				<br>cujo resultado seria:
+				<br><a href="Resumos_HTML/documento_exemplo.pdf"> Documento referência relativa </a>
+				<br>NOTA: esta referência só funciona no computador em questão
+				<br>referência no próprio documento: como acontece no primeiro item do índice:
+				<br>&lt;a href="#o_que_e_html"&gt; O que é HTML? &LT;/a&gt;
+		<h3>Elementos Estruturais</h3>
+			<p><strong>header</strong> - define o cabeçalho
+			<br><strong>footer</strong> - delimita o rodapé
+			<br><strong>nav</strong> - define a estrutura de navegação da página através de links (como menus, tabelas de conteúdo, ...)
+			<br><strong>article</strong> - é usada para definir partes do conteúdo da página de possam ser usadas independentemente
+			<br><strong>section</strong> - serve para dividir o documento em diferentes secções
+			<br><strong>div</strong> - division. Não tem significado semântico associado, permite agrupar elementos do doc. É usado em conjunto com CSS para definir zonas dos docs.
+			<br><strong>id</strong> - identifier. Atributo de <em>div</em>. Serve para distinguir diferentes divisores.
+			<br><em>exemplo:</em>
+			<br>&lt;div id="grupo1"&gt;
+			<br>&nbsp; &nbsp; &lt;h1&gt;Título 1&lt;/h1&gt;
+			<br>&nbsp; &nbsp;&nbsp; &nbsp; &lt;p&gt;Isto é o grupo 1.&lt;/p&gt;
+			<br>&lt;/div&gt;
+		<h3>Comentários</h3>
+			<p>Utilizando &lt;!-- <em>comentário</em> --&gt; , temos a oportunidade de inserir a meio do documento um comentário que é ignorado no navegador web.
+	</section>
+	<section>
+	<h2><a id="organizacao_web">Organização de sítios web</a></h2>
+		<p>"Um sítio web corresponde ao conjunto de documentos e recursos necessários para apresentar um sitio"
+
+		<h3>Nomeação de ficheiros</h3>
+		<p>Ao nomear ficheiros é importante evitar <strong>caracteres especiais, acentos ou espaços</strong>, preferivelmente evitar também capitalização de letras.
+		<br>Por norma, o ficheiro base de um website deve chamar.se "index.html"
+		<h3>Organização de ficheiros</h3>
+		<p>Manter os ficheiros organizados por tipo e para cada secção do website é aconselhado para facilitar trabalho.
+		<h3>Vantagens de uma boa organização</h3>
+		<p>Ao usar bons nomes para os ficheiros e ao manter uma organização simples e eficiente, o resultado serão URLs fáceis de ler, com entendimento do seu conteúdo mais rápido.
+		<br><em>Por exemplo</em>: "http://www.google.com/images/logo.gif" <strong>versus</strong> "http://sigarra.up.pt/web_base.gera_pagina?p_pagina=2436"
+	</section>
+	<footer>
+	Referência: powerpoint "HTML", Carla Teixeira Lopes
+	<br>
+	<br>Rita dos Anjos Pena
+	</footer>
+</body>
+</html>
